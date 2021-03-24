@@ -8,6 +8,7 @@
 </head>
 <body>
     <p>{{goal.description}}</p>
+    <p>This goal will be complete on {{goal.completeDate|dateCount}} days</p>
     <button (click)='goalComplete(true)'>Complete</button>
 </body>
 </html>
