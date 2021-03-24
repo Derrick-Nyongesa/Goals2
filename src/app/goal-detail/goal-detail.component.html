@@ -8,7 +8,7 @@
 </head>
 <body>
     <p>{{goal.description}}</p>
-    <p>This goal will be complete on {{goal.completeDate|dateCount}} days</p>
-    <button (click)='goalDelete(true)'>Delete Goal</button>
+    <p>This goal will be complete in {{goal.completeDate|dateCount}} days</p>
+    <button (click)='goalDelete(true)' class="btn btn-outline-danger">Delete Goal</button>
 </body>
 </html>

@@ -1,11 +1,33 @@
-<div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="container">
     <h1>My Goals</h1>
-    <ul>
-      <div  *ngFor='let goal of goals; let i=index'>
-        <li appStrikethrough>{{goal.name}} due on {{goal.completeDate|date|uppercase}}</li>
-        <button (click)='toggleDetails(i)'>Toggle Details</button>
-        <app-goal-detail *ngIf='goal.showDescription' [goal]='goal'(isComplete)='deleteGoal($event,i)'></app-goal-detail>
+    <hr>
+  
+    <div class="row">
+      <div class="col-md-6">
+        <div *ngFor='let goal of goals;let i = index'>
+          <div>
+            <h4 id={{i}} appStrikethrough>{{goal.name}} due on {{goal.completeDate|date|uppercase}}</h4>
+            <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
+          </div>
+  
+          <div *ngIf='goal.showDescription'>
+            <app-goal-detail  [goal]='goal' (isComplete) = 'deleteGoal($event,i)'></app-goal-detail>
+          </div>
+        </div>
       </div>
-    </ul>
-    <p *ngIf='goals.length>5'>Your goals are too many</p>
+    </div>
+  
+    <p *ngIf='goals.length > 5'>You have too many goals</p>
   </div>
+</body>
+</html>
