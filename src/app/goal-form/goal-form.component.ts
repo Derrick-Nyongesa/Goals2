@@ -5,6 +5,7 @@ import { Goal } from '../goal';
   selector: 'app-goal-form',
   templateUrl: './goal-form.component.html',
   styleUrls: ['./goal-form.component.css']
+  
 })
 export class GoalFormComponent implements OnInit {
 
